@@ -24,8 +24,8 @@ class Sprite {
 }
 
 const player = new Sprite({
-    x: 0,
-    y: 0
+    x: 480,
+    y: 512,
 })
 
 player.draw()
