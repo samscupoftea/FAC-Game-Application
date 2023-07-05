@@ -11,13 +11,33 @@ c.fillRect(0, 0, canvas.width, canvas.height);
 
 class Sprite {
     //Below is a function called constructor. It takes an object as an argument which include: position, velocity, offset and color.
-    constructor({ position, velocity, offset, color = 'red ' }) {
+    constructor(position) {
+        this.position = position
 
-        this.position = position;
-        this.velocity = velocity;
-        this.width = 80;
-        this.height = 50;
-        // This last part will come into use once I code the controls for my main basket sprite. 
-        this.lastkey;
+    }
+
+
+    draw() {
+        c.fillStyle = 'red';
+        c.fillRect(this.position.x, this.position.y, 80, 50)
     }
 }
+
+const player = new Sprite({
+    x: 0,
+    y: 0
+})
+
+player.draw()
+
+console.log(player);
+
+
+
+
+
+
+
+
+
+
