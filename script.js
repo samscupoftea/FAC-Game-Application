@@ -32,7 +32,7 @@ player.draw()
 
 console.log(player);
 
-function animate();
+function animate()
 
 
 
