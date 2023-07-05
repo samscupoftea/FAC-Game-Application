@@ -1,0 +1,14 @@
+* {
+    margin: 5;
+    padding: 0;
+
+}
+
+.canvas {
+    margin: 200px;
+    padding: 10px;
+}
+
+.player {
+    color: blue;
+}
