@@ -12,3 +12,21 @@
 .player {
     color: blue;
 }
+
+
+.mainContent {
+    position: relative;
+
+}
+
+.waterContainer {
+    position: absolute;
+}
+
+.water {
+    width: 1013px;
+    height: 20px;
+    background-color: aqua;
+
+
+}
