@@ -9,6 +9,8 @@ canvas.height = 576
 
 c.fillRect(0, 0, canvas.width, canvas.height);
 
+
+
 class Sprite {
     //Below is a function called constructor. It takes an object as an argument which include: position, velocity, offset and color.
     constructor(position) {
@@ -18,7 +20,7 @@ class Sprite {
 
 
     draw() {
-        c.fillStyle = 'red';
+        c.fillStyle = 'brown';
         c.fillRect(this.position.x, this.position.y, 80, 50)
     }
 }
@@ -32,6 +34,10 @@ player.draw()
 
 console.log(player);
 
+function moveBasketLeft() {
+    BasketLeft -= 15;
+
+}
 
 
 
