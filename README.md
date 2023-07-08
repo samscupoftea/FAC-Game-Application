@@ -13,3 +13,12 @@ Plan:
 5. I know how to key in a form of gravity into a single sprite. However, I will need to key in a slower fall rate. 
 6. Figure out a way to duplicate the single sprite eggs so that a number of them are falling. 
 7. Perhaps use Math.random in order to generate the ever-changing falling eggs’ starting positions. 
+
+
+
+
+
+
+
+
+<!------To make the background image completely visible within the .basket element, you can adjust the background-size property. By setting it to cover, the background image will be scaled proportionally to cover the entire container. ----!> 
