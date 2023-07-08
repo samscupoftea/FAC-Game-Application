@@ -7,6 +7,7 @@ const c = canvas.getContext('2d');
 canvas.width = 1024
 canvas.height = 576
 
+
 c.fillRect(0, 0, canvas.width, canvas.height);
 
 
@@ -34,10 +35,10 @@ player.draw()
 
 console.log(player);
 
-function moveBasketLeft() {
-    BasketLeft -= 15;
-
+function movePlayerLeft() {
+    PlayerLeft -= 15;
 }
+
 
 
 
