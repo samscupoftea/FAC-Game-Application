@@ -1,6 +1,6 @@
 * {
     margin: 0;
-    padding: 5;
+    padding: 0;
 }
 
 body {
@@ -21,6 +21,16 @@ body {
 }
 
 
+.water {
+    width: 100%;
+    height: 15px;
+    background-color: aqua;
+    background-image: url(./daniel-sinoca-aanclsb0su0-unsplash\ \(1\).jpg);
+    background-position: center;
+    position: absolute;
+    bottom: 0;
+
+}
 
 
 
