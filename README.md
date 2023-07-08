@@ -7,7 +7,7 @@ Catch the falling eggs in your cup using the left and right arrow keys. If 5 or 
 Plan: 
 
 1. Create canvas of the game in JS. DONE! 
-2. Create cup sprite using constructor and draw () fill.Rect. 
+2. Create cup sprite using constructor and draw () fill.Rect. DONE 
 3. Using JS, code in the left and right event listener commands.
 4. Now add egg sprite(s). 
 5. I know how to key in a form of gravity into a single sprite. However, I will need to key in a slower fall rate. 
