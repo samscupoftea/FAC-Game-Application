@@ -75,11 +75,12 @@ function makeEggs() {
     egg.setAttribute("class", "egg");
     eggs.appendChild(egg);
     function eggGravity() {
-        eggBottom -= 10;
+        eggBottom -= 5;
         egg.style.bottom = eggBottom + 'px';
 
     }
     setInterval(eggGravity, 20);
+    setTimeout(makeEggs, 3000);
     egg.style.bottom = eggBottom + 'px';
     egg.style.left = eggLeft + 'px';
 }
