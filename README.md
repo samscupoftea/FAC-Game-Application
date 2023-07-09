@@ -17,7 +17,7 @@ Catch the falling eggs in your cup using the left and right arrow keys. If 5 or 
 10. Make a third function called controle(e) that uses if statements to tell it if (arrowKeyLeft){
     do left function }
     etc. 
-11. Create a function called makeEggs that uses appendChild, document.CreateElement to create a child div within the parent div of "eggs". So under "Eggs" <div>, there will be "Egg" <div>.
+11. Create a function called makeEggs that uses appendChild, document.CreateElement and setAttribute to create a child div within the parent div of "eggs". So under "Eggs" <div>, there will be "Egg" <div>.
 
 
 
