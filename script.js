@@ -35,7 +35,7 @@
 
 const gameContent = document.querySelector(".gameContent");
 const basket = document.querySelector(".basket");
-const egg = document.querySelector(".egg");
+const eggs = document.querySelector(".eggs");
 
 let basketLeft = parseInt(window.getComputedStyle(basket).getPropertyValue("left"));
 let basketBottom = parseInt(window.getComputedStyle(basket).getPropertyValue("bottom"));
@@ -65,6 +65,13 @@ function control(e) {
         moveBasketRight();
     }
 }
+
+function makeEggs() {
+    let egg = document.createElement('div');
+    egg.setAttribute("class", "egg");
+    eggs.appendChild(egg);
+}
+makeEggs();
 
 document.addEventListener("keydown", control);
 
