@@ -67,9 +67,15 @@ function control(e) {
 }
 // create function called makeEggs that creates a div child element within the parent element of eggs.
 function makeEggs() {
+    // Added eggBottom and Egg left. Egg left is equal to math.random * the width of the screen. This means that the egg generates randomly across the top width of the game area. 
+    let eggBottom = top;
+    let eggLeft = Math.floor(Math.random() * gameContentWidth)
+
     let egg = document.createElement('div');
     egg.setAttribute("class", "egg");
     eggs.appendChild(egg);
+    egg.style.bottom = eggBottom + 'px';
+    egg.style.left = eggLeft + 'px';
 }
 makeEggs();
 
