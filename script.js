@@ -1,9 +1,12 @@
 // Start my JS by making variables that link to the main game elemtns using DOM. 
 
-const gameContent = getElementID("gameContent");
-const basket = getElementID("water");
-const egg = getElementID("egg");
-const water = getElementID("water");
+const gameContent = document.querySelector(".gameContent");
+const basket = document.querySelector(".water");
+const egg = document.querySelector(".egg");
+const water = document.querySelector(".water");
+//Make variables and us parse int to establish the left side and bottom of the basket itself. 
+const basketLeft = parseInt(window.getComputedStyle(basket).getPropertyValue("left"));
+const basketBottom = parseInt(window.getComputedStyle(basket).getPropertyValue("bottom"));
 
 
 
