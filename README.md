@@ -19,7 +19,12 @@ Catch the falling eggs in your cup using the left and right arrow keys. If 5 or 
     etc. 
 11. Create a function called makeEggs that uses appendChild, document.CreateElement and setAttribute to create a child div within the parent div of "eggs". So under "Eggs" <div>, there will be "Egg" <div>.
 12. Style egg div in CSS. 
-
+13. Add to makeEggs Function:--- let eggBottom = 600;
+    let eggLeft = Math.floor(Math.random() * gameContentWidth)--- This makes the egg appear randomly across the width of screen each time the page is refreshed. 
+14. Within the makeEggs function, make an eggGravity function that makes the egg fall from the top of the game to the bottom at a certain pixels per second rate. 
+15. Add setInterval and setTimeout to make start the loop. 
+TO DO: When eggs touch the basket they dissapear and it adds 1 point. 
+If 5 or more eggs touch the water, the game is over. Display score? 
 
 
 
