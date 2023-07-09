@@ -40,30 +40,33 @@ const egg = document.querySelector(".egg");
 let basketLeft = parseInt(window.getComputedStyle(basket).getPropertyValue("left"));
 let basketBottom = parseInt(window.getComputedStyle(basket).getPropertyValue("bottom"));
 
-function moveBasketLeft() {
-    basketLeft -= 15;
-    basket.style.left = basketLeft + 'px';
-}
+const gameContentWidth = parseInt(window.getComputedStyle(gameContent).getPropertyValue("width"));
 
+function moveBasketLeft() {
+    if (basketLeft > 0) {
+        basketLeft -= 15;
+        basket.style.left = basketLeft + 'px';
+    }
+}
 
 function moveBasketRight() {
-
-    basketLeft += 15;
-    basket.style.left = basketLeft + 'px';
+    const basketWidth = parseInt(window.getComputedStyle(basket).getPropertyValue("width"));
+    if (basketLeft < gameContentWidth - basketWidth) {
+        basketLeft += 15;
+        basket.style.left = basketLeft + 'px';
+    }
 }
 
-
 function control(e) {
-    if (e.key == "ArrowLeft") {
+    if (e.key === "ArrowLeft") {
         moveBasketLeft();
     }
-    if (e.key == "ArrowRight") {
+    if (e.key === "ArrowRight") {
         moveBasketRight();
     }
 }
 
 document.addEventListener("keydown", control);
-
 
 
 
