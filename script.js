@@ -1,23 +1,68 @@
-// Start my JS by making variables that link to the main game elemtns using DOM. 
+// // Start my JS by making variables that link to the main game elemtns using DOM. 
+
+// const gameContent = document.querySelector(".gameContent");
+// const basket = document.querySelector(".water");
+// const egg = document.querySelector(".egg");
+// const water = document.querySelector(".water");
+// //Make variables and us parse int to establish the left side and bottom of the basket itself. 
+// const basketLeft = parseInt(window.getComputedStyle(basket).getPropertyValue("left"));
+// const basketBottom = parseInt(window.getComputedStyle(basket).getPropertyValue("bottom"));
+
+
+// function moveBasketLeft() {
+//     basketLeft -= 15;
+//     basket.style.left = basketLeft + 'px';
+
+
+// }
+// function moveBasketRight() {
+//     basketRight += 15;
+//     basket.style.left = basketRight + 'px';
+// }
+
+// function control(e) {
+//     if (e.key == "ArrowLeft") {
+//         moveBasketLeft();
+//     }
+//     if (e.key == "ArrowRight") {
+//         moveBasketRight();
+//     }
+// }
+
+// document.addEventListener("keydown", control);
+
+
 
 const gameContent = document.querySelector(".gameContent");
-const basket = document.querySelector(".water");
+const basket = document.querySelector(".basket");
 const egg = document.querySelector(".egg");
-const water = document.querySelector(".water");
-//Make variables and us parse int to establish the left side and bottom of the basket itself. 
-const basketLeft = parseInt(window.getComputedStyle(basket).getPropertyValue("left"));
-const basketBottom = parseInt(window.getComputedStyle(basket).getPropertyValue("bottom"));
+
+let basketLeft = parseInt(window.getComputedStyle(basket).getPropertyValue("left"));
+let basketBottom = parseInt(window.getComputedStyle(basket).getPropertyValue("bottom"));
+
+function moveBasketLeft() {
+    basketLeft -= 15;
+    basket.style.left = basketLeft + 'px';
+}
 
 
+function moveBasketRight() {
+
+    basketLeft += 15;
+    basket.style.left = basketLeft + 'px';
+}
 
 
+function control(e) {
+    if (e.key == "ArrowLeft") {
+        moveBasketLeft();
+    }
+    if (e.key == "ArrowRight") {
+        moveBasketRight();
+    }
+}
 
-
-
-
-
-
-
+document.addEventListener("keydown", control);
 
 
 
