@@ -1,4 +1,9 @@
+// Start my JS by making variables that link to the main game elemtns using DOM. 
 
+const gameContent = getElementID("gameContent");
+const basket = getElementID("water");
+const egg = getElementID("egg");
+const water = getElementID("water");
 
 
 
