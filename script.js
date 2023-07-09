@@ -65,7 +65,7 @@ function control(e) {
         moveBasketRight();
     }
 }
-
+// create function called makeEggs that creates a div child element within the parent element of eggs.
 function makeEggs() {
     let egg = document.createElement('div');
     egg.setAttribute("class", "egg");
