@@ -85,7 +85,7 @@ function makeEggs() {
         if (eggBottom <= basketBottom && eggLeft >= basketLeft && eggLeft <= (basketLeft + basketWidth)) {
             eggs.removeChild(egg);
             score++;
-            scoreDisplay.textContent = score;
+            scoreDisplay.textContent = `Eggs caught: ${score}`;
 
 
 

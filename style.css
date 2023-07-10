@@ -104,11 +104,11 @@ body {
 .score {
     text-transform: uppercase;
     letter-spacing: 4px;
-    color: rgb(160, 0, 0);
+    color: rgb(234, 255, 0);
     /* Update the color to black or any other contrasting color */
     text-align: center;
     margin-top: 20px;
-    font-size: 100px;
+    font-size: 75px;
 }
 
 
