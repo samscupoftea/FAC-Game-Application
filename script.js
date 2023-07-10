@@ -36,14 +36,15 @@
 const gameContent = document.querySelector(".gameContent");
 const basket = document.querySelector(".basket");
 const eggs = document.querySelector(".eggs");
-const score = document.getElementById('score');
+//Implement dynamic player score
 let playerScore = 0;
-
+const score = document.getElementById('score');
 let basketLeft = parseInt(window.getComputedStyle(basket).getPropertyValue("left"));
 let basketBottom = parseInt(window.getComputedStyle(basket).getPropertyValue("bottom"));
 
 const gameContentWidth = parseInt(window.getComputedStyle(gameContent).getPropertyValue("width"));
-
+let eggBottom = 600;
+let eggLeft;
 function moveBasketLeft() {
     if (basketLeft > 0) {
         basketLeft -= 15;
