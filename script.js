@@ -89,7 +89,7 @@ function makeEggs() {
     function eggGravity() {
         const basketWidth = parseInt(window.getComputedStyle(basket).getPropertyValue("width"));
         const basketLeft = parseInt(window.getComputedStyle(basket).getPropertyValue("left"));
-        if (eggBottom < basketBottom && eggLeft >= basketLeft && eggLeft <= (basketLeft + basketWidth)) {
+        if (eggBottom < basketBottom + 50 && eggBottom > basketBottom && eggLeft > basketLeft - 30 && eggLeft < basketLeft + 80) {
             eggs.removeChild(egg);
             score++;
             scoreDisplay.textContent = `Eggs caught: ${score}`;
