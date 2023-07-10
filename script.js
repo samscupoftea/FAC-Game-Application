@@ -42,8 +42,7 @@ let basketLeft = parseInt(window.getComputedStyle(basket).getPropertyValue("left
 let basketBottom = parseInt(window.getComputedStyle(basket).getPropertyValue("bottom"));
 
 const gameContentWidth = parseInt(window.getComputedStyle(gameContent).getPropertyValue("width"));
-let eggBottom = 600;
-let eggLeft;
+
 let score = 0;
 const scoreDisplay = document.querySelector(".score");
 
@@ -90,7 +89,9 @@ function makeEggs() {
 
 
         }
-        if (eggBottom < basketBottom * 5) {
+        if (eggBottom < basketBottom) {
+
+
 
 
             // alert("Game over");
