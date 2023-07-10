@@ -36,6 +36,8 @@
 const gameContent = document.querySelector(".gameContent");
 const basket = document.querySelector(".basket");
 const eggs = document.querySelector(".eggs");
+const score = document.getElementById('score');
+let playerScore = 0;
 
 let basketLeft = parseInt(window.getComputedStyle(basket).getPropertyValue("left"));
 let basketBottom = parseInt(window.getComputedStyle(basket).getPropertyValue("bottom"));
@@ -75,6 +77,19 @@ function makeEggs() {
     egg.setAttribute("class", "egg");
     eggs.appendChild(egg);
     function eggGravity() {
+        const basketWidth = parseInt(window.getComputedStyle(basket).getPropertyValue("width"));
+        const basketLeft = parseInt(window.getComputedStyle(basket).getPropertyValue("left"));
+        if (eggBottom <= basketBottom && eggLeft >= basketLeft && eggLeft <= (basketLeft + basketWidth)) {
+            eggs.removeChild(egg);
+            playerScore++;
+            score.innerText = `Player: ${playerScore}`;
+
+        }
+        if (eggBottom < basketBottom * 5) {
+
+
+            // alert("Game over");
+        }
         eggBottom -= 5;
         egg.style.bottom = eggBottom + 'px';
 

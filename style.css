@@ -67,7 +67,15 @@ body {
 }
 
 
+.score {
 
+    text-align: flex;
+
+
+    font-size: 25px;
+    font-style: italic;
+    color: black;
+}
 
 
 

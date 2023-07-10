@@ -25,8 +25,9 @@ Catch the falling eggs in your cup using the left and right arrow keys. If 5 or 
 15. Add setInterval and setTimeout to make start the loop. 
 TO DO: When eggs touch the basket they dissapear and it adds 1 point. 
 If 5 or more eggs touch the water, the game is over. Display score? 
-
-
+16. I need to create a score for each egg that the player and thus the basket catches. Make let variable and call it playerScore = 0. 
+17. Create a HTML element using document.getElementById('scores');. I knew I needed to display a score so I got this from searching via you.com. It explained the simplest way of displaying a score within JS and HTML. 
+18. 
 
 
 
