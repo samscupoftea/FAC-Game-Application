@@ -37,14 +37,16 @@ const gameContent = document.querySelector(".gameContent");
 const basket = document.querySelector(".basket");
 const eggs = document.querySelector(".eggs");
 //Implement dynamic player score
-let playerScore = 0;
-const score = document.getElementById('score');
+
 let basketLeft = parseInt(window.getComputedStyle(basket).getPropertyValue("left"));
 let basketBottom = parseInt(window.getComputedStyle(basket).getPropertyValue("bottom"));
 
 const gameContentWidth = parseInt(window.getComputedStyle(gameContent).getPropertyValue("width"));
 let eggBottom = 600;
 let eggLeft;
+let score = 0;
+const scoreDisplay = document.querySelector(".score");
+
 function moveBasketLeft() {
     if (basketLeft > 0) {
         basketLeft -= 15;
@@ -82,8 +84,10 @@ function makeEggs() {
         const basketLeft = parseInt(window.getComputedStyle(basket).getPropertyValue("left"));
         if (eggBottom <= basketBottom && eggLeft >= basketLeft && eggLeft <= (basketLeft + basketWidth)) {
             eggs.removeChild(egg);
-            playerScore++;
-            score.innerText = `Player: ${playerScore}`;
+            score++;
+            scoreDisplay.textContent = score;
+
+
 
         }
         if (eggBottom < basketBottom * 5) {

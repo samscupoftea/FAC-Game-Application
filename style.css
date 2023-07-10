@@ -99,16 +99,17 @@ body {
 }
 
 
-.score {
-    position: absolute;
-    top: 10px;
-    /* Adjust the top value to position the score element vertically */
-    left: 50%;
-    /* Adjust the left value to center the score element horizontally */
-    transform: translateX(-50%);
-    /* Centers the element horizontally */
-}
 
+
+.score {
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: rgb(160, 0, 0);
+    /* Update the color to black or any other contrasting color */
+    text-align: center;
+    margin-top: 20px;
+    font-size: 100px;
+}
 
 
 
