@@ -51,6 +51,7 @@ function moveBasketLeft() {
         basketLeft -= 15;
         basket.style.left = basketLeft + 'px';
     }
+    updateBasketPosition();
 }
 
 function moveBasketRight() {
@@ -59,7 +60,14 @@ function moveBasketRight() {
         basketLeft += 15;
         basket.style.left = basketLeft + 'px';
     }
+    updateBasketPosition();
 }
+
+function updateBasketPosition() {
+    basketLeft = parseInt(window.getComputedStyle(basket).getPropertyValue("left"));
+    basketBottom = parseInt(window.getComputedStyle(basket).getPropertyValue("bottom"));
+}
+
 
 function control(e) {
     if (e.key === "ArrowLeft") {
@@ -81,7 +89,7 @@ function makeEggs() {
     function eggGravity() {
         const basketWidth = parseInt(window.getComputedStyle(basket).getPropertyValue("width"));
         const basketLeft = parseInt(window.getComputedStyle(basket).getPropertyValue("left"));
-        if (eggBottom <= basketBottom && eggLeft >= basketLeft && eggLeft <= (basketLeft + basketWidth)) {
+        if (eggBottom < basketBottom && eggLeft >= basketLeft && eggLeft <= (basketLeft + basketWidth)) {
             eggs.removeChild(egg);
             score++;
             scoreDisplay.textContent = `Eggs caught: ${score}`;
