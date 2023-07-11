@@ -86,14 +86,16 @@ function control(e) {
 //Created variable for missed that starts at the integer 0. 
 let missed = 0;
 
-
+let waterBottom = 700;
 
 // Function called makeEggs that creates a div child element within the parent element of eggs.
 function makeEggs() {
     // Added eggBottom and Egg left. Egg left is equal to math.random * the width of the screen. This means that the egg generates randomly across the top width of the game area. 
     let eggBottom = 600;
+
     let eggLeft = Math.floor(Math.random() * (gameContentWidth - 100) + 100)
     console.log(gameContentWidth);
+
 
     let egg = document.createElement('div');
     egg.setAttribute("class", "egg");
@@ -108,7 +110,16 @@ function makeEggs() {
                 score++;
                 scoreDisplay.textContent = `Eggs caught: ${score}`
             }
+            // MAYBE DELETE OR CHANGE? 
+            if (eggBottom < basketBottom && eggBottom >= basketBottom - 5) {
+                eggs.removeChild(egg);
+                missed++;
+                if (missed >= 5) {
+                    alert("Game Over");
+                }
+            }
         }
+        console.log("hit" + missed);
 
         // function clearEggs() {
         //     if (eggBottom <= basketBottom) {
