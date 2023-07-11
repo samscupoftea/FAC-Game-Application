@@ -48,7 +48,7 @@ const gameContentWidth = parseInt(window.getComputedStyle(gameContent).getProper
 let score = 0;
 //Get score display 
 const scoreDisplay = document.querySelector(".score");
-
+// Function for moving the basket left. 
 function moveBasketLeft() {
     if (basketLeft > 0) {
         basketLeft -= 15;
@@ -56,7 +56,7 @@ function moveBasketLeft() {
     }
     updateBasketPosition();
 }
-
+//Functions for moving the basket right 
 function moveBasketRight() {
     const basketWidth = parseInt(window.getComputedStyle(basket).getPropertyValue("width"));
     if (basketLeft < gameContentWidth - basketWidth) {
@@ -66,12 +66,14 @@ function moveBasketRight() {
     updateBasketPosition();
 }
 
+
+//Function for updating left and bottom basket positions each time left or right key has been invoked. 
 function updateBasketPosition() {
     basketLeft = parseInt(window.getComputedStyle(basket).getPropertyValue("left"));
     basketBottom = parseInt(window.getComputedStyle(basket).getPropertyValue("bottom"));
 }
 
-
+//Function for controlling the the basket. 
 function control(e) {
     if (e.key === "ArrowLeft") {
         moveBasketLeft();
@@ -82,7 +84,7 @@ function control(e) {
 }
 
 let missed = 0;
-// create function called makeEggs that creates a div child element within the parent element of eggs.
+// Function called makeEggs that creates a div child element within the parent element of eggs.
 function makeEggs() {
     // Added eggBottom and Egg left. Egg left is equal to math.random * the width of the screen. This means that the egg generates randomly across the top width of the game area. 
     let eggBottom = 600;
@@ -98,9 +100,7 @@ function makeEggs() {
         if (eggBottom < basketBottom + 50 && eggBottom > basketBottom && eggLeft > basketLeft - 30 && eggLeft < basketLeft + 80) {
             eggs.removeChild(egg);
             score++;
-            scoreDisplay.textContent = `Eggs caught: ${score}`;
-
-
+            scoreDisplay.textContent = `Eggs caught: ${score}`
 
         }
 
@@ -126,11 +126,13 @@ function makeEggs() {
         egg.style.bottom = eggBottom + 'px';
 
     }
+    // Starts the gravity functons and therefore the game. 
     setInterval(eggGravity, 20);
     setTimeout(makeEggs, 3000);
     egg.style.bottom = eggBottom + 'px';
     egg.style.left = eggLeft + 'px';
 }
+//Starts the make eggs functions. 
 makeEggs();
 
 document.addEventListener("keydown", control);
