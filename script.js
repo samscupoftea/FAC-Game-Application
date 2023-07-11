@@ -37,6 +37,7 @@ const gameContent = document.querySelector(".gameContent");
 const basket = document.querySelector(".basket");
 const eggs = document.querySelector(".eggs");
 const water = document.querySelector(".water")
+
 //Implement dynamic player score
 
 let basketLeft = parseInt(window.getComputedStyle(basket).getPropertyValue("left"));
@@ -82,8 +83,11 @@ function control(e) {
         moveBasketRight();
     }
 }
-
+//Created variable for missed that starts at the integer 0. 
 let missed = 0;
+
+
+
 // Function called makeEggs that creates a div child element within the parent element of eggs.
 function makeEggs() {
     // Added eggBottom and Egg left. Egg left is equal to math.random * the width of the screen. This means that the egg generates randomly across the top width of the game area. 
@@ -94,23 +98,32 @@ function makeEggs() {
     let egg = document.createElement('div');
     egg.setAttribute("class", "egg");
     eggs.appendChild(egg);
+
     function eggGravity() {
         const basketWidth = parseInt(window.getComputedStyle(basket).getPropertyValue("width"));
         const basketLeft = parseInt(window.getComputedStyle(basket).getPropertyValue("left"));
         if (eggBottom < basketBottom + 50 && eggBottom > basketBottom && eggLeft > basketLeft - 30 && eggLeft < basketLeft + 80) {
-            eggs.removeChild(egg);
-            score++;
-            scoreDisplay.textContent = `Eggs caught: ${score}`
-
+            if (egg.parentNode === eggs) {
+                eggs.removeChild(egg);
+                score++;
+                scoreDisplay.textContent = `Eggs caught: ${score}`
+            }
         }
 
-        //         function clearEggs() {
-        //             if (eggBottom <= )
+        // function clearEggs() {
+        //     if (eggBottom <= basketBottom) {
+        //         eggs.removeChild(egg);
+
+
+        //     }
         // }
 
 
 
-        // if (eggBottom < basketBottom) {
+
+
+
+        // function missedEggs (eggBottom < basketBottom) {
 
         //     if (missed >= 5) {
         //         alert("Game over");
@@ -121,7 +134,7 @@ function makeEggs() {
 
 
         // alert("Game over");
-        // }
+
         eggBottom -= 5;
         egg.style.bottom = eggBottom + 'px';
 
