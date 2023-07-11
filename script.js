@@ -36,14 +36,17 @@
 const gameContent = document.querySelector(".gameContent");
 const basket = document.querySelector(".basket");
 const eggs = document.querySelector(".eggs");
+const water = document.querySelector(".water")
 //Implement dynamic player score
 
 let basketLeft = parseInt(window.getComputedStyle(basket).getPropertyValue("left"));
 let basketBottom = parseInt(window.getComputedStyle(basket).getPropertyValue("bottom"));
-
+let waterTop = parseInt(window.getComputedStyle(water).getPropertyValue("value"));
+//Get the game width using parseInt 
 const gameContentWidth = parseInt(window.getComputedStyle(gameContent).getPropertyValue("width"));
-
+//Set starting score for both catching eggs and eggs that are missed. 
 let score = 0;
+//Get score display 
 const scoreDisplay = document.querySelector(".score");
 
 function moveBasketLeft() {
@@ -77,11 +80,14 @@ function control(e) {
         moveBasketRight();
     }
 }
+
+let missed = 0;
 // create function called makeEggs that creates a div child element within the parent element of eggs.
 function makeEggs() {
     // Added eggBottom and Egg left. Egg left is equal to math.random * the width of the screen. This means that the egg generates randomly across the top width of the game area. 
     let eggBottom = 600;
-    let eggLeft = Math.floor(Math.random() * gameContentWidth)
+    let eggLeft = Math.floor(Math.random() * (gameContentWidth - 100) + 100)
+    console.log(gameContentWidth);
 
     let egg = document.createElement('div');
     egg.setAttribute("class", "egg");
@@ -97,13 +103,25 @@ function makeEggs() {
 
 
         }
-        if (eggBottom < basketBottom) {
+
+        //         function clearEggs() {
+        //             if (eggBottom <= )
+        // }
 
 
 
+        // if (eggBottom < basketBottom) {
 
-            // alert("Game over");
-        }
+        //     if (missed >= 5) {
+        //         alert("Game over");
+        //     } else {
+        //         missed++;
+        //     }
+
+
+
+        // alert("Game over");
+        // }
         eggBottom -= 5;
         egg.style.bottom = eggBottom + 'px';
 
