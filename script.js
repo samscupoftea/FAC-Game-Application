@@ -65,7 +65,7 @@ function moveBasketLeft() {
         basketLeft -= 15;
         basket.style.left = basketLeft + 'px';
     }
-    updateBasketPosition();
+
 }
 //Functions for moving the basket right 
 function moveBasketRight() {
@@ -74,14 +74,7 @@ function moveBasketRight() {
         basketLeft += 15;
         basket.style.left = basketLeft + 'px';
     }
-    updateBasketPosition();
-}
 
-
-//Function for updating left and bottom basket positions each time left or right key has been invoked. 
-function updateBasketPosition() {
-    basketLeft = parseInt(window.getComputedStyle(basket).getPropertyValue("left"));
-    basketBottom = parseInt(window.getComputedStyle(basket).getPropertyValue("bottom"));
 }
 
 //Function for controlling the the basket. 
@@ -115,14 +108,42 @@ function makeEggs() {
 
                 score++;
                 scoreDisplay.textContent = `Eggs caught: ${score}`
-            } else if (eggBottom > basketBottom) {
+            } else if (eggBottom > basket) {
                 console.log("Yep")
                 // alert("Game OVER")
 
             }
 
         }
-        //     // MAYBE DELETE OR CHANGE? 
+
+        // alert("Game over");
+
+        eggBottom -= 5;
+        egg.style.bottom = eggBottom + 'px';
+        egg.style.left = eggLeft + 'px';
+    }
+    // Starts the gravity functons and therefore the game. 
+    let fallInterval = setInterval(eggGravity, 20);
+
+    let eggTimeout = setTimeout(makeEggs, 3000);
+    egg.style.bottom = eggBottom + 'px';
+    egg.style.left = eggLeft + 'px';
+}
+//Starts the make eggs functions. 
+makeEggs();
+
+document.addEventListener("keydown", control);
+
+
+
+
+
+
+
+
+//THIS COULD GO WITHIN EGG GRAVITY FUNCTION AND ABOVE EGG BOTTOM -=5
+
+        //     // MAYBE DELETE OR CHANGE?
         //     if (eggBottom < waterBottom + 50 && eggBottom > waterBottom && eggLeft > waterLeft - 30 && eggLeft < waterLeft + 80) {
         //         eggs.removeChild(egg);
         //         missed++;
@@ -157,30 +178,6 @@ function makeEggs() {
 
 
         // alert("Game over");
-
-        eggBottom -= 5;
-        egg.style.bottom = eggBottom + 'px';
-        egg.style.left = eggLeft + 'px';
-    }
-
-
-
-    // Starts the gravity functons and therefore the game. 
-    let fallInterval = setInterval(eggGravity, 20);
-
-    let eggTimeout = setTimeout(makeEggs, 3000);
-    egg.style.bottom = eggBottom + 'px';
-    egg.style.left = eggLeft + 'px';
-}
-//Starts the make eggs functions. 
-makeEggs();
-
-document.addEventListener("keydown", control);
-
-
-
-
-
 
 
 
