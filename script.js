@@ -5,7 +5,8 @@ let eggs = document.querySelector(".eggs");
 let basket = document.querySelector(".basket");
 let basketLeft = parseInt(window.getComputedStyle(basket).getPropertyValue("left"));
 let basketBottom = parseInt(window.getComputedStyle(basket).getPropertyValue("bottom"));
-
+let score = 0;
+const scoreDisplay = document.querySelector(".score");
 
 function moveBasketLeft() {
     if (basketLeft > 0) {
@@ -44,6 +45,8 @@ function generateEggs() {
     function eggGravity() {
         if (eggBottom < basketBottom + 50 && eggBottom > basketBottom && eggLeft > basketLeft - 30 && eggLeft < basketLeft + 80) {
             eggs.removeChild(egg);
+            score++;
+            scoreDisplay.textContent = `Eggs caught: ${score}`;
             clearInterval(fallInterval);
 
 
