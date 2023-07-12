@@ -42,13 +42,25 @@ function generateEggs() {
     eggs.appendChild(egg);
 
     function eggGravity() {
-        eggBottom -= 10;
+        if (eggBottom < basketBottom + 50 && eggBottom > basketBottom && eggLeft > basketLeft - 30 && eggLeft < basketLeft + 80) {
+            eggs.removeChild(egg);
+            clearInterval(fallInterval);
+
+
+        }
+        if (eggBottom < basketBottom) {
+            alert("Game Over!");
+            clearInterval(fallInterval);
+            clearTimeout(eggTimeout);
+            location.reload();
+        }
+        eggBottom -= 5;
         egg.style.bottom = eggBottom + 'px';
         egg.style.left = eggLeft + 'px';
 
     }
-    setInterval(eggGravity, 20);
-    setTimeout(generateEggs, 2000);
+    let fallInterval = setInterval(eggGravity, 20);
+    let eggTimeout = setTimeout(generateEggs, 2000);
 
 }
 
