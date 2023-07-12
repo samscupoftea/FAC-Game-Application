@@ -42,6 +42,8 @@ function generateEggs() {
     egg.setAttribute("class", "egg");
     eggs.appendChild(egg);
 
+    let missedEggs = [];
+
     function eggGravity() {
         if (eggBottom < basketBottom + 50 && eggBottom > basketBottom && eggLeft > basketLeft - 30 && eggLeft < basketLeft + 80) {
             eggs.removeChild(egg);
@@ -51,11 +53,17 @@ function generateEggs() {
 
 
         }
-        if (eggBottom < basketBottom) {
-            alert("Game Over!");
-            clearInterval(fallInterval);
-            clearTimeout(eggTimeout);
-            location.reload();
+        if (eggBottom < basketBottom && !missedEggs.includes(egg)) {
+
+            missed = true;
+            missedEggs.push(egg);
+            if (missedEggs.length >= 5) {
+
+                alert("Game Over!");
+                clearInterval(fallInterval);
+                clearTimeout(eggTimeout);
+                location.reload();
+            }
         }
         eggBottom -= 5;
         egg.style.bottom = eggBottom + 'px';
