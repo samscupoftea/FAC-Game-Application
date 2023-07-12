@@ -42,9 +42,19 @@ const water = document.querySelector(".water")
 
 let basketLeft = parseInt(window.getComputedStyle(basket).getPropertyValue("left"));
 let basketBottom = parseInt(window.getComputedStyle(basket).getPropertyValue("bottom"));
-let waterTop = parseInt(window.getComputedStyle(water).getPropertyValue("value"));
+let waterTop = parseInt(window.getComputedStyle(water).getPropertyValue("top"));
+let waterBottom = parseInt(window.getComputedStyle(water).getPropertyValue("bottom"));
+let waterLeft = parseInt(window.getComputedStyle(water).getPropertyValue("left"));
 //Get the game width using parseInt 
 const gameContentWidth = parseInt(window.getComputedStyle(gameContent).getPropertyValue("width"));
+const gameContentHeight = parseInt(window.getComputedStyle(gameContent).getPropertyValue("height"));
+
+const gameContentBottom = parseInt(window.getComputedStyle(gameContent).getPropertyValue("bottom"));
+const gameContentTop = parseInt(window.getComputedStyle(gameContent).getPropertyValue("top"));
+
+const gameContentBottomValue = gameContentTop + gameContentHeight;
+console.log(gameContentBottomValue)
+
 //Set starting score for both catching eggs and eggs that are missed. 
 let score = 0;
 //Get score display 
@@ -86,40 +96,42 @@ function control(e) {
 //Created variable for missed that starts at the integer 0. 
 let missed = 0;
 
-let waterBottom = 700;
+
 
 // Function called makeEggs that creates a div child element within the parent element of eggs.
 function makeEggs() {
     // Added eggBottom and Egg left. Egg left is equal to math.random * the width of the screen. This means that the egg generates randomly across the top width of the game area. 
-    let eggBottom = 600;
-
+    let eggBottom = 470;
     let eggLeft = Math.floor(Math.random() * (gameContentWidth - 100) + 100)
-    console.log(gameContentWidth);
-
-
     let egg = document.createElement('div');
     egg.setAttribute("class", "egg");
     eggs.appendChild(egg);
-
+    console.log(gameContentHeight)
     function eggGravity() {
-        const basketWidth = parseInt(window.getComputedStyle(basket).getPropertyValue("width"));
-        const basketLeft = parseInt(window.getComputedStyle(basket).getPropertyValue("left"));
+
         if (eggBottom < basketBottom + 50 && eggBottom > basketBottom && eggLeft > basketLeft - 30 && eggLeft < basketLeft + 80) {
             if (egg.parentNode === eggs) {
                 eggs.removeChild(egg);
+
                 score++;
                 scoreDisplay.textContent = `Eggs caught: ${score}`
+            } else if (eggBottom > basketBottom) {
+                console.log("Yep")
+                // alert("Game OVER")
+
             }
-            // MAYBE DELETE OR CHANGE? 
-            if (eggBottom < basketBottom && eggBottom >= basketBottom - 5) {
-                eggs.removeChild(egg);
-                missed++;
-                if (missed >= 5) {
-                    alert("Game Over");
-                }
-            }
+
         }
-        console.log("hit" + missed);
+        //     // MAYBE DELETE OR CHANGE? 
+        //     if (eggBottom < waterBottom + 50 && eggBottom > waterBottom && eggLeft > waterLeft - 30 && eggLeft < waterLeft + 80) {
+        //         eggs.removeChild(egg);
+        //         missed++;
+        //         if (missed >= 5) {
+        //             alert("Game Over");
+        //         }
+        //     }
+        // }
+        // console.log("hit" + missed);
 
         // function clearEggs() {
         //     if (eggBottom <= basketBottom) {
@@ -148,11 +160,15 @@ function makeEggs() {
 
         eggBottom -= 5;
         egg.style.bottom = eggBottom + 'px';
-
+        egg.style.left = eggLeft + 'px';
     }
+
+
+
     // Starts the gravity functons and therefore the game. 
-    setInterval(eggGravity, 20);
-    setTimeout(makeEggs, 3000);
+    let fallInterval = setInterval(eggGravity, 20);
+
+    let eggTimeout = setTimeout(makeEggs, 3000);
     egg.style.bottom = eggBottom + 'px';
     egg.style.left = eggLeft + 'px';
 }
@@ -160,8 +176,6 @@ function makeEggs() {
 makeEggs();
 
 document.addEventListener("keydown", control);
-
-
 
 
 
