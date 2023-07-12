@@ -12,7 +12,7 @@ function moveBasketLeft() {
     if (basketLeft > 0) {
 
 
-        basketLeft -= 15;
+        basketLeft -= 20;
         basket.style.left = basketLeft + 'px';
     }
 }
@@ -21,7 +21,7 @@ function moveBasketRight() {
     if (basketLeft < 620) {
 
 
-        basketLeft += 15;
+        basketLeft += 20;
         basket.style.left = basketLeft + 'px';
     }
 }
@@ -53,17 +53,17 @@ function generateEggs() {
 
 
         }
-        if (eggBottom < basketBottom && !missedEggs.includes(egg)) {
+        if (eggBottom < basketBottom) {
 
-            missed = true;
-            missedEggs.push(egg);
-            if (missedEggs.length >= 5) {
+            // missed = true;
+            // missedEggs.push(egg);
+            // if (missedEggs.length >= 5) {
 
-                alert("Game Over!");
-                clearInterval(fallInterval);
-                clearTimeout(eggTimeout);
-                location.reload();
-            }
+            alert("Game Over!");
+            clearInterval(fallInterval);
+            clearTimeout(eggTimeout);
+            location.reload();
+            // }
         }
         eggBottom -= 5;
         egg.style.bottom = eggBottom + 'px';
