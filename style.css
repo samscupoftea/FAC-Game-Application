@@ -6,14 +6,8 @@
 body {
     width: 100%;
     height: 100vh;
-
-
-
     align-items: center;
     justify-content: center;
-
-
-
 
 }
 
@@ -21,13 +15,9 @@ body {
     width: 700px;
     height: 500px;
     background-color: black;
-
     position: relative;
-
     float: left;
 }
-
-
 
 
 .basket {
@@ -40,9 +30,6 @@ body {
     bottom: 15px;
     left: calc(50% - 25px);
 }
-
-
-
 
 
 
@@ -67,9 +54,6 @@ body {
     position: absolute;
 
 }
-
-
-
 
 
 
@@ -103,79 +87,7 @@ body {
     text-transform: uppercase;
     letter-spacing: 4px;
     color: rgb(234, 255, 0);
-    /* Update the color to black or any other contrasting color */
     text-align: center;
     margin-top: 20px;
     font-size: 75px;
 }
-
-
-
-
-
-
-/* * {
-    margin: 0;
-    padding: 0;
-
-}
-
-#game-Canvas {
-    width: 1024px;
-    height: 576;
-
-
-}
-
-
-.mainContent {
-    position: relative;
-
-}
-
-.smallContent {
-    position: absolute;
-}
-
-.basketContainer {
-    position: absolute;
-    bottom: 0;
-    width: 1000px;
-}
-
-.basket {
-    width: 300px;
-    height: 50px;
-    color: rgb(45, 13, 190);
-    position: absolute;
-}
-
-.waterContainer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-
-}
-
-.water {
-    width: 1013px;
-    height: 15px;
-    background-color: aqua;
-    background-image: url(./daniel-sinoca-aanclsb0su0-unsplash\ \(1\).jpg);
-    background-position: center;
-    position: relative;
-
-}
-
-
-
-.basket {
-    width: 300px;
-    height: 50px;
-    color: rgb(45, 13, 190);
-    position: absolute;
-
-
-
-
-} */
