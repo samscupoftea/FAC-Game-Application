@@ -18,6 +18,7 @@ body {
     width: 700px;
     height: 500px;
     background-color: black;
+    background-image: linear-gradient(rgba(248, 248, 248, 0.7), rgba(171, 171, 169, 0.7)), url(./beach.jpg);
     position: relative;
     float: left;
 }
