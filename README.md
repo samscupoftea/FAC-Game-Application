@@ -10,7 +10,7 @@ In **Egg In Basket**, your goal is to catch falling eggs in your basket. Move th
 
 ## Development Process
 
-I developed **Egg In Basket** using JavaScript, HTML, and CSS. Here's a breakdown of the steps involved in creating the game:
+I developed this game using JavaScript, HTML, and CSS. Here's a breakdown of the steps involved in creating the game:
 
 1. **HTML Structure**: I created the main game container and element divs in HTML to provide the necessary structure for the game.
 
@@ -38,9 +38,9 @@ I developed **Egg In Basket** using JavaScript, HTML, and CSS. Here's a breakdow
 
 ## Motivation for the Game
 
-I decided to create **Egg In Basket** based on a combination of factors. I had previously worked on various game projects, including a Flappy Bird-style game, a complex fighting game, and a variation of Flappy Bird where objects fell from above. However, I felt limited by the underlying game structures I had established for those projects.
+I decided to create this particular game based on a combination of factors. I had previously worked on various game projects, including a Flappy Bird-style game, a complex fighting game, and a variation of Flappy Bird where objects fell from above. However, I felt limited by the underlying game structures I had established for those projects.
 
-The inspiration for this game came from a childhood memory shared by my girlfriend. She used to play a game where she had to catch falling eggs with a basket. Inspired by her story, I decided to merge the concepts I had learned from my previous projects to create **Egg In Basket**. By repurposing the basket movement mechanism and utilizing my knowledge of generating randomized elements, I aimed to capture the essence of the childhood game while adding my own innovative twist.
+The inspiration for this game came from a childhood memory shared by my girlfriend. She used to play a game where she had to catch falling eggs with a basket. Inspired by her story, I decided to merge the concepts I had learned from my previous projects to create this one. By repurposing the basket movement mechanism and utilizing my knowledge of generating randomized elements, I aimed to capture the essence of the childhood game while adding my own innovative twist.
 
 Furthermore, I aimed to improve upon my previous attempts by designing the game with more thoughtfulness. I wanted to minimize reliance on CSS and focus on handling animations and movements strictly in JavaScript. I added features such as live score tracking, egg disappearance upon catching, and collision detection to enhance the gameplay and challenge myself. Through the development process, I expanded my understanding of JavaScript's capabilities and learned how to create more engaging games.
 
