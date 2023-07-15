@@ -36,7 +36,7 @@ function control(e) {
 
 
 function generateEggs() {
-    let eggBottom = 470;
+    let eggBottom = 600;
     let eggLeft = Math.floor(Math.random() * 620);
     let egg = document.createElement('div');
     egg.setAttribute("class", "egg");
