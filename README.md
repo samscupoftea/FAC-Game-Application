@@ -1,69 +1,67 @@
-# EggCatchGame
+# **EggCatchGame**
 
-## Introduction
+## **Introduction**
 
-This is the readme file for **EggCatchGame**, a JavaScript game project developed as part of the 2023 application to FAC bootcamp. The game involves catching falling eggs using a virtual cup controlled by the left and right arrow keys. This document provides an overview of the game, explains the development process, and outlines the motivation behind creating the game.
+This is the readme file for **EggCatchGame**, a JavaScript game project developed as part of my application to the 2023 FAC bootcamp. In this game, you'll have to catch falling eggs using a virtual cup controlled by the left and right arrow keys. This document provides an overview of the game, explains the development process, and outlines my motivation for creating it.
 
-## Game Summary: Egg And Cup
+## **Game Summary: Egg And Cup**
 
-In **EggCatchGame**, the objective is to catch falling eggs in a cup using the left and right arrow keys. If an egg touches the water without being caught, the game is over. The player's score increases as they catch more eggs, and the player with the highest score is considered the winner.
+In **EggCatchGame**, your goal is to catch falling eggs in your cup. Move the cup left or right using the arrow keys to position it correctly. If an egg touches the water without being caught, the game is over. As you catch more eggs, your score will increase. The player with the highest score is considered the winner.
 
-## Development Process
+## **Development Process**
 
-The game was developed using JavaScript, HTML, and CSS. The following steps were involved in creating **EggCatchGame**:
+I developed **EggCatchGame** using JavaScript, HTML, and CSS. Here's a breakdown of the steps involved in creating the game:
 
-1. **HTML Structure**: The main game container and element divs were created in HTML to provide the necessary structure for the game.
+1. **HTML Structure**: I created the main game container and element divs in HTML to provide the necessary structure for the game.
 
-2. **CSS Styling**: The styling for the page, body, and main game divs was defined in CSS to ensure a visually appealing game interface.
+2. **CSS Styling**: To ensure an appealing game interface, I defined the styling for the page, body, and main game divs using CSS.
 
-3. **Basket and Water Placement**: The basket and water divs were positioned using CSS, with the water div placed at the bottom of the game content area and styled with a water background image for added visual effect.
+3. **Basket and Water Placement**: Using CSS, I positioned the cup and water divs. The water div is placed at the bottom of the game content area and styled with a water background image for a nice visual effect.
 
-4. **Variable Initialization**: Various variables were created using query selectors to access and manipulate game elements.
+4. **Variable Initialization**: I created various variables to access and manipulate game elements using query selectors.
 
-5. **Basket Movement**: Separate functions were implemented to enable left and right movement of the basket using the arrow keys.
+5. **Basket Movement**: I implemented separate functions to enable left and right movement of the cup using the arrow keys.
 
-6. **Input Control**: A control function was developed to handle user input through arrow keys and trigger the corresponding basket movement functions.
+6. **Input Control**: To handle user input, I developed a control function that responds to arrow key presses and triggers the corresponding cup movement functions.
 
-7. **Egg Generation**: The `makeEggs` function was created to dynamically generate egg elements as child divs within the parent div named "eggs". This involved utilizing `appendChild`, `document.createElement`, and `setAttribute` methods.
+7. **Egg Generation**: Using the `makeEggs` function, I dynamically generate egg elements as child divs within the parent div named "eggs". This involved utilizing `appendChild`, `document.createElement`, and `setAttribute` methods.
 
-8. **Egg Styling**: The egg div was styled using CSS to ensure visual coherence with the game's overall design.
+8. **Egg Styling**: I styled the egg div using CSS to ensure it blends well with the overall game design.
 
-9. **Randomization**: Within the `makeEggs` function, the egg's starting position was randomized across the screen width using the `Math.floor(Math.random() * gameContentWidth)` formula.
+9. **Randomization**: Within the `makeEggs` function, I randomized the starting position of each egg across the screen width using the `Math.floor(Math.random() * gameContentWidth)` formula.
 
-10. **Egg Gravity**: An `eggGravity` function was implemented to simulate the falling motion of eggs from the top to the bottom of the game area at a specified speed using intervals and timeouts.
+10. **Egg Gravity**: I implemented an `eggGravity` function to simulate the falling motion of the eggs from the top to the bottom of the game area. I achieved this using intervals and timeouts to control the speed of the fall.
 
-11. **Score Tracking**: A `playerScore` variable was introduced to keep track of the player's score. A corresponding HTML element was created using `document.getElementById('scores')` to display the live score.
+11. **Collision Detection**: One of the most challenging parts of the development process was implementing collision detection. I used `parseInt(window.getComputedStyle())` and `.getPropertyValue()` to access the left and bottom properties of the cup. By comparing these properties with the egg's position and applying suitable conditions, I could detect collisions between the cup and the egg, as well as when an egg misses the cup and touches the water.
 
-12. **Collision Detection**: Currently marked as "TO DO" in the development process, implementing collision detection logic is planned to recognize when an egg is caught by the basket, updating the score accordingly.
+12. **Game Over Condition**: The game ends if five or more eggs touch the water. At the end of the game, your final score will be displayed.
 
-13. **Game Over Condition**: The game will end if five or more eggs touch the water. The final score will be displayed at the end of the game.
+## **Motivation for the Game**
 
-## Motivation for the Game
+I decided to create **EggCatchGame** based on a combination of factors. I had previously worked on various game projects, including a Flappy Bird-style game, a complex fighting game, and a variation of Flappy Bird where objects fell from above. However, I felt limited by the underlying game structures I had established for those projects.
 
-The decision to create **EggCatchGame** was motivated by a combination of factors. The developer had previously worked on different game projects, including a Flappy Bird-style game, a complex fighting game, and a variation of Flappy Bird where objects fell from above. However, these projects reached a point where the developer felt limited by the underlying game structures they had established.
+The motivation for this game came from a childhood memory shared by my girlfriend. She used to play a game where she had to catch falling eggs with a basket. Inspired by her story, I decided to merge the concepts I had learned from my previous projects to create **EggCatchGame**. For example, I repurposed the basket movement mechanism from one of my previous games and utilized my knowledge of generating randomized elements from the Flappy Bird variation.
 
-Inspiration came from the developer's girlfriend, who shared memories of a childhood game involving catching falling eggs. This sparked the idea of merging the concepts learned from previous projects to create **EggCatchGame**. For instance, the basket movement mechanism from a previous game was repurposed for this project. Similarly, the knowledge of generating randomized elements from the Flappy Bird variation was utilized for egg generation.
+Additionally, I aimed to improve upon my previous attempts by designing the game with more thoughtfulness. I wanted to minimize reliance on CSS and focus on handling animations and movements strictly in JavaScript. I added features such as live score tracking, egg disappearance upon catching, and collision detection to enhance the gameplay and challenge myself. Through the development process, I expanded my understanding of JavaScript's capabilities and learned how to create more engaging games.
 
-Additionally, the developer aimed to improve upon their previous attempts by designing the game with more forethought. They wanted to avoid excessive reliance on CSS and instead handle animations and movements strictly in JavaScript. The inclusion of a live score tracker, egg disappearance upon catching, and collision detection added further complexity and expanded their understanding of JavaScript's capabilities.
+## **Abandoned Plan**
 
-## Abandoned Plan
+Initially, I considered an alternative approach to create the game by drawing the basket and eggs entirely in JavaScript and utilizing the canvas element as the game content area. However, due to limitations in my JavaScript proficiency, I decided to abandon this plan and pursue the current implementation.
 
-The developer initially considered an alternative approach for creating the game, involving drawing the basket and eggs entirely in JavaScript and utilizing the canvas element as the game content area. However, due to limitations in their JavaScript proficiency, this plan was abandoned in favor of the current implementation.
+### **Abandoned Plan Steps**:
 
-### Abandoned Plan Steps:
+1. **Canvas Creation**: I planned to create a canvas element using JavaScript to serve as the game display.
 
-1. **Canvas Creation**: A canvas element would be created in JavaScript to serve as the game display.
+2. **Cup Sprite**: I intended to use a constructor to create a cup sprite and draw it on the canvas using the `fillRect` method.
 
-2. **Cup Sprite**: A constructor would be used to create a cup sprite, which would be drawn on the canvas using the `fillRect` method.
+3. **Event Listeners**: I would have implemented event listeners to handle the left and right arrow keys, controlling the cup's movement on the canvas.
 
-3. **Event Listeners**: Event listeners for the left and right arrow keys would be implemented to control the cup's movement.
+4. **Egg Sprites**: I planned to add egg sprites to the game, incorporating a slower fall rate to create the desired gameplay.
 
-4. **Egg Sprites**: Egg sprites would be added to the game, incorporating a slower fall rate to create the desired gameplay.
+5. **Multiple Eggs**: I intended to duplicate the egg sprites to simulate multiple eggs falling. I would have used `Math.random` to generate starting positions for each egg.
 
-5. **Multiple Eggs**: The egg sprites would be duplicated to simulate multiple eggs falling, possibly using `Math.random` to generate starting positions.
+## **Conclusion**
 
-## Conclusion
+I developed **EggCatchGame** as a JavaScript game project with the goal of combining the concepts I had learned from my previous game projects. By creating a first-person game where players catch falling eggs using a virtual cup, I was able to apply my knowledge of JavaScript while also improving upon my past experiences. The addition of features such as live score tracking and collision detection enhanced the complexity and enjoyment of the game. Although I initially considered an alternative plan involving canvas-based rendering, the current implementation proved more suitable given my level of expertise.
 
-**EggCatchGame** was developed as a JavaScript game project with the aim of combining the concepts learned from previous game projects. By creating a game where players catch falling eggs using a virtual cup, the developer not only utilized their existing knowledge of JavaScript but also improved upon their past experiences. The inclusion of additional features, such as live score tracking and collision detection, further enhanced the game's complexity. Although an alternative plan involving canvas-based rendering was initially considered, the current implementation proved more suitable given the developer's expertise.
-
-Please refer to the project files for the complete implementation and enjoy playing **EggCatchGame**!
+Please refer to the project files for the complete implementation, and enjoy playing **EggCatchGame**!
