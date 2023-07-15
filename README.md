@@ -1,50 +1,61 @@
-# EggCatchGame
-This is my game project for my 2023 application to FAC bootcamp. 
-Game Summary: Egg And Cup 
+EggCatchGame
+Introduction
+This is the readme file for EggCatchGame, a JavaScript game project developed as part of the 2023 application to FAC bootcamp. The game involves catching falling eggs using a virtual cup controlled by the left and right arrow keys. This document provides an overview of the game, explains the development process, and outlines the motivation behind creating the game.
 
-Catch the falling eggs in your cup using the left and right arrow keys. If 5 or more eggs hit the ground it’s game over. The person who can last the longest gains the highest score. 
+Game Summary: Egg And Cup
+In EggCatchGame, the objective is to catch falling eggs in a cup using the left and right arrow keys. If an egg touches the water without being caught, the game is over. The player's score increases as they catch more eggs, and the player with the highest score is considered the winner.
 
+Development Process
+The game was developed using JavaScript, HTML, and CSS. The following steps were involved in creating EggCatchGame:
 
-1. Create main game container and element divs in HTML. 
-2. Set the styling of the page, body and main game divs in CSS. 
-3. Use styling to place basket and water divs. 
-4. Style water Div to be at the bottom of the game content area. Added background image of water to create effect. 
-5. Position the basket via CSS to sit on top of the water at the bottom, middle of the game content area. 
-6. Create variables for each game div: Using query selector. 
-7. Get the left and bottom area's of the basket div by using parseInt and getPropertyValue("Left", "Bottom).
-8. Create variable that gets the total width area of the game also using -- parseInt(window.getComputedStyle(gameContent).getPropertyValue("width"));
-9. Make seperate functions for moving the basket left and/or right. 
-10. Make a third function called controle(e) that uses if statements to tell it if (arrowKeyLeft){
-    do left function }
-    etc. 
-11. Create a function called makeEggs that uses appendChild, document.CreateElement and setAttribute to create a child div within the parent div of "eggs". So under "Eggs" <div>, there will be "Egg" <div>.
-12. Style egg div in CSS. 
-13. Add to makeEggs Function:--- let eggBottom = 600;
-    let eggLeft = Math.floor(Math.random() * gameContentWidth)--- This makes the egg appear randomly across the width of screen each time the page is refreshed. 
-14. Within the makeEggs function, make an eggGravity function that makes the egg fall from the top of the game to the bottom at a certain pixels per second rate. 
-15. Add setInterval and setTimeout to make start the loop. 
-TO DO: When eggs touch the basket they dissapear and it adds 1 point. 
-If 5 or more eggs touch the water, the game is over. Display score? 
-16. I need to create a score for each egg that the player and thus the basket catches. Make let variable and call it playerScore = 0. 
-17. Create a HTML element using document.getElementById('scores');. I knew I needed to display a score so I got this from searching via you.com. It explained the simplest way of displaying a score within JS and HTML. 
-18. 
+HTML Structure: The main game container and element divs were created in HTML to provide the necessary structure for the game.
 
+CSS Styling: The styling for the page, body, and main game divs was defined in CSS to ensure a visually appealing game interface.
 
+Basket and Water Placement: The basket and water divs were positioned using CSS, with the water div placed at the bottom of the game content area and styled with a water background image for added visual effect.
 
+Variable Initialization: Various variables were created using query selectors to access and manipulate game elements.
 
+Basket Movement: Separate functions were implemented to enable left and right movement of the basket using the arrow keys.
 
+Input Control: A control function was developed to handle user input through arrow keys and trigger the corresponding basket movement functions.
 
+Egg Generation: The makeEggs function was created to dynamically generate egg elements as child divs within the parent div named "eggs". This involved utilizing appendChild, document.createElement, and setAttribute methods.
 
-Plan: 
+Egg Styling: The egg div was styled using CSS to ensure visual coherence with the game's overall design.
 
-1. Create canvas of the game in JS. DONE! 
-2. Create cup sprite using constructor and draw () fill.Rect. DONE 
-3. Using JS, code in the left and right event listener commands.
-4. Now add egg sprite(s). 
-5. I know how to key in a form of gravity into a single sprite. However, I will need to key in a slower fall rate. 
-6. Figure out a way to duplicate the single sprite eggs so that a number of them are falling. 
-7. Perhaps use Math.random in order to generate the ever-changing falling eggs’ starting positions. 
+Randomization: Within the makeEggs function, the egg's starting position was randomized across the screen width using the Math.floor(Math.random() * gameContentWidth) formula.
 
+Egg Gravity: An eggGravity function was implemented to simulate the falling motion of eggs from the top to the bottom of the game area at a specified speed using intervals and timeouts.
 
+Score Tracking: A playerScore variable was introduced to keep track of the player's score. A corresponding HTML element was created using document.getElementById('scores') to display the live score.
 
-<!------To make the background image completely visible within the .basket element, you can adjust the background-size property. By setting it to cover, the background image will be scaled proportionally to cover the entire container. ----!> 
+Collision Detection: Currently marked as "TO DO" in the development process, implementing collision detection logic is planned to recognize when an egg is caught by the basket, updating the score accordingly.
+
+Game Over Condition: The game will end if five or more eggs touch the water. The final score will be displayed at the end of the game.
+
+Motivation for the Game
+The decision to create EggCatchGame was motivated by a combination of factors. The developer had previously worked on different game projects, including a Flappy Bird-style game, a complex fighting game, and a variation of Flappy Bird where objects fell from above. However, these projects reached a point where the developer felt limited by the underlying game structures they had established.
+
+Inspiration came from the developer's girlfriend, who shared memories of a childhood game involving catching falling eggs. This sparked the idea of merging the concepts learned from previous projects to create EggCatchGame. For instance, the basket movement mechanism from a previous game was repurposed for this project. Similarly, the knowledge of generating randomized elements from the Flappy Bird variation was utilized for egg generation.
+
+Additionally, the developer aimed to improve upon their previous attempts by designing the game with more forethought. They wanted to avoid excessive reliance on CSS and instead handle animations and movements strictly in JavaScript. The inclusion of a live score tracker, egg disappearance upon catching, and collision detection added further complexity and expanded their understanding of JavaScript's capabilities.
+
+Abandoned Plan
+The developer initially considered an alternative approach for creating the game, involving drawing the basket and eggs entirely in JavaScript and utilizing the canvas element as the game content area. However, due to limitations in their JavaScript proficiency, this plan was abandoned in favor of the current implementation.
+
+Abandoned Plan Steps:
+Canvas Creation: A canvas element would be created in JavaScript to serve as the game display.
+
+Cup Sprite: A constructor would be used to create a cup sprite, which would be drawn on the canvas using the fillRect method.
+
+Event Listeners: Event listeners for the left and right arrow keys would be implemented to control the cup's movement.
+
+Egg Sprites: Egg sprites would be added to the game, incorporating a slower fall rate to create the desired gameplay.
+
+Multiple Eggs: The egg sprites would be duplicated to simulate multiple eggs falling, possibly using Math.random to generate starting positions.
+
+Conclusion
+EggCatchGame was developed as a JavaScript game project with the aim of combining the concepts learned from previous game projects. By creating a game where players catch falling eggs using a virtual cup, the developer not only utilized their existing knowledge of JavaScript but also improved upon their past experiences. The inclusion of additional features, such as live score tracking and collision detection, further enhanced the game's complexity. Although an alternative plan involving canvas-based rendering was initially considered, the current implementation proved more suitable given the developer's expertise.
+
+Please refer to the project files for the complete implementation and enjoy playing EggCatchGame!
