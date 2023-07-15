@@ -78,3 +78,4 @@ function generateEggs() {
 generateEggs();
 
 document.addEventListener("keydown", control);
+// Add notes in for the JS. 
