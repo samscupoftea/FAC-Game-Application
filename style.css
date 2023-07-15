@@ -18,7 +18,8 @@ body {
     width: 700px;
     height: 500px;
     background-color: black;
-    background-image: linear-gradient(rgba(248, 248, 248, 0.7), rgba(171, 171, 169, 0.7)), url(./wp7623847-blue-and-brown-hd-abstract-wallpapers.jpg);
+    background-image: linear-gradient(rgba(44, 42, 42, 0.7), rgba(171, 171, 169, 0.7)), url(./Game\ background.jpg);
+    background-size: cover;
     position: relative;
     float: left;
 }
@@ -27,7 +28,8 @@ body {
 .basket {
     width: 50px;
     height: 65px;
-    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0);
+    /* Set the alpha value to 0 for transparency */
     background-image: url(./29046-6-empty-easter-basket-image.png);
     background-size: cover;
     position: absolute;
